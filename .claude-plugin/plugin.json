@@ -1,7 +1,7 @@
 {
   "name": "linkedin-and-cv-builder",
-  "version": "0.1.0",
-  "description": "LinkedIn and CV workflows for software professionals: context gathering, CV and profile optimization, posts, and trends — with Notion as the required store (MCP configured in chat).",
+  "version": "0.3.0",
+  "description": "LinkedIn and CV workflows for software professionals: context gathering, CV and profile optimization (2-page ATS .docx), cover letters (.docx), posts with auto image generation, trends, and version tracking — with Notion as the required store (MCP configured in chat).",
   "author": {
     "name": "Guilherme Soares Rosa"
   },
@@ -9,9 +9,12 @@
     "linkedin",
     "cv",
     "resume",
+    "cover-letter",
     "personal-branding",
     "software-engineering",
     "career",
-    "engineering"
+    "engineering",
+    "image-generation",
+    "notion"
   ]
 }

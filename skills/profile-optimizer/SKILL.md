@@ -7,12 +7,22 @@ description: >
   fields (not posts). Also triggers for "LinkedIn SEO", "profile visibility", or
   "make my profile stand out". Works for any engineering track.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # LinkedIn Profile Optimizer
 
 Optimize every section of a LinkedIn profile for senior tech professionals across all engineering tracks. The goal is discoverability by recruiters + credibility when someone lands on the profile. These two objectives sometimes conflict — resolve in favor of credibility.
+
+## Writing Tone
+
+Everything written for the user's profile should sound like they wrote it themselves on a good day — informed, direct, a bit of personality. Not templated, not corporate, not the LinkedIn default voice that everyone recognizes immediately. If it reads like it was AI-generated or written by a career coach, rewrite it.
+
+No: "With over X years of experience, I have developed a deep expertise in..."
+No: "I am passionate about building scalable solutions..."
+No: "Results-driven senior engineer seeking..."
+
+Yes: Write like a person who knows exactly what they do and why it matters.
 
 ## The Golden Rule
 
@@ -118,7 +128,7 @@ Not directly editable via text, but flag if the user mentions it:
 
 See `references/headline-examples.md` for a swipe file of high-performing headlines by role type and engineering track.
 
-## Saving to Notion
+## Saving to Notion + Local Backup
 
 After generating a new headline or About section, offer to save it:
 
@@ -135,5 +145,10 @@ If yes:
    - **Notes**: What changed and why
    - **Date**: Today
 4. Confirm: "Saved to Notion → LinkedIn / Profile Versions."
+
+Also save a local `.md` backup to the workspace folder:
+- File path: `linkedin/profile-v[N]-[slug].md` (e.g. `linkedin/profile-v2-ai-focus.md`)
+- Content: headline, full About section, and notes on what changed
+- Use the Write tool to create this file immediately after the Notion save
 
 If Notion MCP is not connected, prompt the user to configure it via `/mcp` (see `notion-setup`). If no workspace exists yet, run the Notion setup skill first.

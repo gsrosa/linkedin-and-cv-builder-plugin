@@ -7,7 +7,7 @@ description: >
   or positioning with current market demand. Also triggers for "market trends",
   "what should I focus on", or "what's relevant right now". Works for any engineering track.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Trend Analyzer
@@ -17,6 +17,10 @@ Identify high-signal content opportunities and market positioning angles for sen
 ## Core Objective
 
 Match the user's **real experience** to topics with high current demand. Avoid overused angles that offer no differentiation. This skill works for any track: frontend, backend, DevOps/platform, AI/ML, data engineering, mobile, full-stack.
+
+## Writing Tone
+
+When presenting ideas and analysis, keep it grounded and direct. Write like you're talking to an engineer who can tell the difference between a real insight and filler. Skip the hype. If a topic is genuinely hot, say why specifically — not just "this is trending."
 
 ## How to Generate Trend-Based Ideas
 
