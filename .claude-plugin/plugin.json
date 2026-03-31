@@ -1,0 +1,9 @@
+{
+  "name": "linkedin-and-cv-builder",
+  "version": "0.1.0",
+  "description": "LinkedIn content strategy, CV optimization, and personal branding for senior tech professionals.",
+  "author": {
+    "name": "Guilherme Soares Rosa"
+  },
+  "keywords": ["linkedin", "cv", "resume", "personal-branding", "frontend", "tech", "career"]
+}
