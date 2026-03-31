@@ -11,7 +11,7 @@ Six skills covering the full lifecycle of personal branding, backed by a persist
 | Skill | What it does | Trigger phrase |
 |-------|-------------|----------------|
 | **Notion Setup** | Creates your Notion workspace and seeds it with CV/profile data | "set up Notion", "create my workspace", runs automatically on first use |
-| **Branding Strategy** | Defines your positioning, content pillars, and headline options | "build my brand", "full strategy", "what should I be known for" |
+| **Get User Context** | Collects CV, LinkedIn URL, and profession-aware Q&A so other skills can personalize output | "onboarding", "my background", "what do you need", before CV/LinkedIn/post work |
 | **Post Generator** | Writes high-quality LinkedIn posts with scroll-stopping hooks | "create a post about X", "make this viral", "post ideas" |
 | **Profile Optimizer** | Rewrites your headline, About section, and experience for LinkedIn | "improve my headline", "rewrite my summary" |
 | **CV Optimizer** | Rewrites CV bullets for impact, metrics, and senior positioning | "optimize my CV", "rewrite this bullet", "tailor for remote" |
@@ -19,12 +19,12 @@ Six skills covering the full lifecycle of personal branding, backed by a persist
 
 ## Usage
 
-Start with **Branding Strategy** if you're setting up from scratch. It will inform everything else.
+Start with **Get User Context** if you're setting up from scratch (CV + LinkedIn + profile questions). It feeds everything else.
 
 For ongoing use, the most common flows are:
 - **Content creation**: Trend Analyzer → Post Generator
 - **Job search**: CV Optimizer → Profile Optimizer
-- **Full setup**: Branding Strategy → Profile Optimizer → CV Optimizer → Post Generator
+- **Full setup**: Get User Context → Profile Optimizer → CV Optimizer → Post Generator
 
 ## Setup
 

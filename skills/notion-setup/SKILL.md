@@ -4,7 +4,7 @@ description: >
   Use this skill when the user asks to "set up Notion", "create my Notion workspace",
   "initialize my knowledge base", "connect to Notion", or when any other skill needs
   to save data and no workspace has been found yet. Also triggers at the start of a
-  branding strategy session to check if a workspace exists. Requires the Notion
+  get-user-context or profile session to check if a workspace exists. Requires the Notion
   connector to be installed.
 metadata:
   version: "0.1.0"
@@ -144,7 +144,7 @@ If any of the following data is available in the conversation context, write it 
 - **Years of experience** — from CV
 - **Tech stack** — from CV skills section
 - **Current positioning** — from CV summary or earlier strategy work
-- **Content pillars** — if branding strategy was already run
+- **Content pillars** — if already defined in conversation or earlier sessions
 - **Target market / roles** — from conversation
 - **Career goals** — from conversation
 

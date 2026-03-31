@@ -19,20 +19,23 @@ Full reference of what each skill saves to Notion, and where.
 
 ## Per-Skill Save Map
 
-### branding-strategy → Profile Page
+### get-user-context → Profile Page
 
-When the branding strategy skill runs and produces output, save to the **Profile page**:
+When the get-user-context skill runs and produces output, save to the **Profile page**:
 
 | Data | Notion block |
 |------|-------------|
-| Positioning statement | Callout block (⚡) |
-| Content pillars (3–4) | Bulleted list under a heading |
-| LinkedIn headline options | Numbered list |
+| LinkedIn profile URL | Link or callout |
+| CV | Link to uploaded doc or pasted summary in toggle |
+| Role track / specialty | Short paragraph or tags |
+| Questionnaire highlights | Bulleted list (stack, goals, audience, geography) |
+| Positioning statement | Callout (⚡) — if derived in the same session |
+| Content pillars (3–4) | Bulleted list — if captured |
 | Target roles / market | Short paragraph |
 | Tech stack summary | Inline text or toggle |
 | Notes / session date | Footer paragraph |
 
-Update the page on each run (replace, don't append). Use `notion-update-page`.
+Update the page on each run (replace overlapping sections, don't duplicate). Use `notion-update-page`.
 
 ---
 
