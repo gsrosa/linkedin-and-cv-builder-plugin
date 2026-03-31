@@ -151,4 +151,4 @@ If yes:
 4. If this was a full CV rewrite, also update the **📌 Current CV** page with the new content
 5. Confirm: "Saved to Notion → CV / CV Versions."
 
-If no workspace exists yet, suggest running the Notion setup first.
+If Notion MCP is not connected, prompt the user to configure it via `/mcp` (see `notion-setup`). If no workspace exists yet, run the Notion setup skill first.

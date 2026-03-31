@@ -4,8 +4,8 @@ description: >
   Use this skill when the user asks to "set up Notion", "create my Notion workspace",
   "initialize my knowledge base", "connect to Notion", or when any other skill needs
   to save data and no workspace has been found yet. Also triggers at the start of a
-  get-user-context or profile session to check if a workspace exists. Requires the Notion
-  connector to be installed.
+  get-user-context or profile session to check if a workspace exists. Requires Notion
+  via MCP (configured during the chat if missing).
 metadata:
   version: "0.1.0"
 ---
@@ -14,13 +14,22 @@ metadata:
 
 Create and maintain the user's personal LinkedIn & CV Builder workspace in Notion. This is the persistent knowledge base that all other skills read from and write to.
 
-## Prerequisites Check
+## Prerequisites check (Notion MCP — required)
 
-Before doing anything, verify the Notion connector is available by attempting a search. If it fails, tell the user:
+This plugin **requires** Notion as the knowledge base. The repo ships `.mcp.json` with Notion’s hosted MCP (`https://mcp.notion.com/mcp`). The user must complete setup **during the chat** if tools are not available yet.
 
-> "To use Notion sync, you'll need the Notion plugin installed and connected. You can find it in the Cowork plugin marketplace. Once connected, come back and I'll set up your workspace."
+1. **Try** a Notion tool (e.g. search) to verify MCP is connected.
+2. **If it fails or tools are missing**, stop and walk the user through configuration — do **not** pretend saves will work:
 
-Then stop — do not proceed without a working Notion connection.
+   - Ask them to open **`/mcp`** in Claude Code (or run: `claude mcp add --transport http notion https://mcp.notion.com/mcp` if they prefer CLI).
+   - Tell them to **add** the Notion server if it is not listed, then complete **OAuth** and grant workspace access when prompted.
+   - Say clearly: persistence for CV, posts, and profile drafts **depends** on this step.
+
+3. **After** they confirm OAuth is done, **retry** the Notion call. If it still fails, troubleshoot (wrong account, blocked pop-up, missing Notion workspace permission) before continuing.
+
+4. Only when Notion tools work: proceed to Step 1 (workspace search / create).
+
+If the user refuses to connect Notion, explain that this plugin is designed around a shared Notion workspace and they should connect it to continue; do not claim data was saved to Notion without a successful API/tool response.
 
 ## Step 1: Check for Existing Workspace
 

@@ -1,17 +1,35 @@
-# Connectors
+# Notion (required)
 
-## Required
+**Notion is required** for this plugin. It stores CV versions, LinkedIn profile iterations, post drafts, and profile notes. Without it, the plugin cannot persist your work between sessions.
 
-This plugin requires the **Notion** connector to be installed and authenticated.
+## Configure MCP during the chat
 
-Notion is used as the persistent knowledge base for this plugin — storing your CV versions, LinkedIn profile iterations, post drafts, and personal branding strategy. Without it, the plugin still works, but nothing is saved between sessions.
+The assistant will **ask you to set up Notion MCP** when tools are not available or when you first need persistence.
 
-## How to connect Notion
+### Claude Code
 
-Install the Notion plugin from the Cowork plugin marketplace, then authenticate with your Notion account. The plugin will automatically create a dedicated workspace in your Notion when you run the setup for the first time.
+1. Run **`/mcp`** in the chat.
+2. Use the **Notion** entry from this plugin’s `.mcp.json` (`https://mcp.notion.com/mcp`), or add it if it is missing.
+3. Complete **OAuth** in the browser and grant access to your Notion workspace.
 
-## Connectors for this plugin
+### CLI alternative
 
-| Category  | Connector | Purpose                                              |
-| --------- | --------- | ---------------------------------------------------- |
-| Knowledge | Notion    | Store CV versions, posts, profile drafts, strategy   |
+```bash
+claude mcp add --transport http notion https://mcp.notion.com/mcp
+```
+
+Then return to the chat and confirm the connection so the assistant can verify with a Notion tool (e.g. search).
+
+## After MCP works
+
+Ask the assistant to run **Notion setup** (or say: “set up my Notion workspace”) so it can create `[YourName] - LinkedIn & CV Builder` and the databases under it.
+
+## What gets stored
+
+| Category | Purpose |
+| -------- | ------- |
+| Notion   | CV versions, posts, profile drafts, strategy / context notes |
+
+## Other environments
+
+If you use a client that supports **Notion connectors** instead of MCP, connect Notion there; the assistant should still verify access before saving.

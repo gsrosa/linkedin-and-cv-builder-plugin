@@ -58,4 +58,4 @@ If yes:
 4. Add the full post text as a child page of the database entry
 5. Confirm: "Saved to Notion → LinkedIn / Posts as a draft."
 
-If no workspace exists yet, suggest running the Notion setup first.
+If Notion MCP is not connected, prompt the user to configure it via `/mcp` (see `notion-setup`). If no workspace exists yet, run the Notion setup skill first.

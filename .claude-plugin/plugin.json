@@ -1,42 +1,17 @@
 {
   "name": "linkedin-and-cv-builder",
   "version": "0.1.0",
-  "description": "LinkedIn content strategy, CV optimization, and personal branding for senior tech professionals.",
+  "description": "LinkedIn and CV workflows for software professionals: context gathering, CV and profile optimization, posts, and trends — with Notion as the required store (MCP configured in chat).",
   "author": {
     "name": "Guilherme Soares Rosa"
   },
-  "keywords": ["linkedin", "cv", "resume", "personal-branding", "tech", "career", "engineering"],
-  "connectors": ["notion"],
-  "skills": [
-    {
-      "name": "get-user-context",
-      "path": "skills/get-user-context/SKILL.md",
-      "description": "Onboarding — collect CV, LinkedIn URL, and professional context before other skills run"
-    },
-    {
-      "name": "notion-setup",
-      "path": "skills/notion-setup/SKILL.md",
-      "description": "Create and initialize the user's Notion workspace for persistent storage"
-    },
-    {
-      "name": "cv-optimizer",
-      "path": "skills/cv-optimizer/SKILL.md",
-      "description": "Optimize and rewrite CV bullets, sections, and structure for senior tech roles"
-    },
-    {
-      "name": "profile-optimizer",
-      "path": "skills/profile-optimizer/SKILL.md",
-      "description": "Optimize LinkedIn headline, About section, and experience fields"
-    },
-    {
-      "name": "post-generator",
-      "path": "skills/post-generator/SKILL.md",
-      "description": "Generate high-quality LinkedIn posts from topics, drafts, or ideas"
-    },
-    {
-      "name": "trend-analyzer",
-      "path": "skills/trend-analyzer/SKILL.md",
-      "description": "Identify high-signal content opportunities and market positioning angles"
-    }
+  "keywords": [
+    "linkedin",
+    "cv",
+    "resume",
+    "personal-branding",
+    "software-engineering",
+    "career",
+    "engineering"
   ]
 }

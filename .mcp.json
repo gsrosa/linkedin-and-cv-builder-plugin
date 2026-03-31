@@ -1,8 +1,7 @@
 {
   "mcpServers": {
     "notion": {
-      "description": "Required for persistent storage of CV versions, LinkedIn profile drafts, post history, and personal branding strategy.",
-      "setup": "Install the Notion connector from the Cowork plugin marketplace and authenticate with your Notion account. The plugin will guide you through setup during the session."
+      "url": "https://mcp.notion.com/mcp"
     }
   }
 }

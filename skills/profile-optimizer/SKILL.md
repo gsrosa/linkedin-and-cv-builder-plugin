@@ -136,4 +136,4 @@ If yes:
    - **Date**: Today
 4. Confirm: "Saved to Notion → LinkedIn / Profile Versions."
 
-If no workspace exists yet, suggest running the Notion setup first.
+If Notion MCP is not connected, prompt the user to configure it via `/mcp` (see `notion-setup`). If no workspace exists yet, run the Notion setup skill first.
