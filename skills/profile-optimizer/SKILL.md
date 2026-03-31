@@ -5,14 +5,14 @@ description: >
   LinkedIn summary", "optimize my LinkedIn profile", "fix my about section", "improve
   my LinkedIn positioning", or any request specifically about their LinkedIn profile
   fields (not posts). Also triggers for "LinkedIn SEO", "profile visibility", or
-  "make my profile stand out".
+  "make my profile stand out". Works for any engineering track.
 metadata:
   version: "0.1.0"
 ---
 
 # LinkedIn Profile Optimizer
 
-Optimize every section of a LinkedIn profile for senior tech professionals. The goal is discoverability by recruiters + credibility when someone lands on the profile. These two objectives sometimes conflict — resolve in favor of credibility.
+Optimize every section of a LinkedIn profile for senior tech professionals across all engineering tracks. The goal is discoverability by recruiters + credibility when someone lands on the profile. These two objectives sometimes conflict — resolve in favor of credibility.
 
 ## The Golden Rule
 
@@ -27,17 +27,20 @@ The headline is the highest-leverage field on LinkedIn. It appears in search res
 ### Formula Options
 
 **Option A — Specialization + Stack:**
+`Senior Backend Engineer | Go · Distributed Systems · Event-Driven Architecture | High-throughput APIs`
 `Senior Frontend Engineer | React · Next.js · TypeScript | Real-time UIs & Frontend Architecture`
 
 **Option B — Value-first:**
-`Frontend Engineer who builds complex, real-time product interfaces | React + TypeScript`
+`Platform Engineer who builds developer infrastructure that scales | Kubernetes · Terraform · GitOps`
+`Backend Engineer who designs APIs that handle millions of requests without drama | Go + PostgreSQL`
 
 **Option C — Niche authority:**
+`Senior ML Engineer specializing in LLM-powered products and RAG pipelines | Python · PyTorch`
 `Senior Frontend Engineer specializing in AI-integrated UIs and frontend architecture | React · Next.js`
 
 ### Headline Rules
 - "Engineer" > "Developer" for senior positioning in international markets
-- Include 2–3 tech keywords for search visibility (React, Next.js, TypeScript are high-value)
+- Include 2–3 tech keywords for search visibility (adapt to track — what recruiters actually search)
 - Avoid: "Open to work" in the headline (use the LinkedIn banner instead)
 - Avoid: generic role + location only ("Senior Developer at Company X, São Paulo")
 - Max 220 characters — LinkedIn truncates in search results at ~120, so front-load the signal
@@ -84,7 +87,7 @@ The About section has ~2,600 characters. Use ~800–1,000 of them. Recruiters do
 Mirror the CV's impact-driven bullets, but:
 - LinkedIn allows more white space — use it
 - Add context for international readers who won't know local company names
-- Include company one-liner for lesser-known companies: "Housi — Brazil's largest short-term rental management platform"
+- Include company one-liner for lesser-known companies: "Housi — Brazil's largest short-term rental management platform" or "Qonto — European SME banking API, 400k+ customers"
 
 ## Featured Section
 
@@ -100,10 +103,12 @@ Recommend adding:
 
 LinkedIn's skill endorsements are weak signals, but the keywords matter for search.
 
-Prioritize skills that appear in job descriptions for target roles:
-- React, TypeScript, Next.js — always include
-- Frontend Architecture, System Design — include if applying to senior/staff roles
-- Node.js, AWS — include if targeting full-stack or platform-leaning roles
+Prioritize skills that appear in job descriptions for target roles. Adapt to the user's track:
+- Frontend: React, TypeScript, Next.js, Frontend Architecture — always include
+- Backend: the primary language (Go, Python, Java, Node.js), System Design, key databases and queues
+- DevOps/Platform: Kubernetes, Terraform, CI/CD platform, cloud providers, Observability tooling
+- AI/ML: Python, PyTorch or TensorFlow, MLOps tools, LLM frameworks if applicable
+- All tracks: include System Design / Architecture for senior/staff roles
 
 ## Profile Photo and Banner
 
@@ -111,7 +116,7 @@ Not directly editable via text, but flag if the user mentions it:
 - Photo: professional, good lighting, plain background — not a selfie
 - Banner: blank banners miss an opportunity. Even a solid color with a tagline is better than the default gray.
 
-See `references/headline-examples.md` for a swipe file of high-performing headlines by role type.
+See `references/headline-examples.md` for a swipe file of high-performing headlines by role type and engineering track.
 
 ## Saving to Notion
 

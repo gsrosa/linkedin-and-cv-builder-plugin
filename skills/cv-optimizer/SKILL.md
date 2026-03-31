@@ -5,13 +5,14 @@ description: >
   my bullet points", "update my CV for a senior role", "tailor my resume for this job",
   "review my experience section", or any request involving a resume or CV file. Also
   triggers for "ATS optimization", "resume feedback", or "CV for remote roles".
+  Works for any engineering track: frontend, backend, DevOps, AI/ML, full-stack, etc.
 metadata:
   version: "0.1.0"
 ---
 
 # CV / Resume Optimizer
 
-Optimize CVs for senior tech professionals targeting remote-first, international, or high-growth companies. Focus exclusively on impact, specificity, and positioning — not responsibilities.
+Optimize CVs for senior tech professionals targeting remote-first, international, or high-growth companies. Focus exclusively on impact, specificity, and positioning — not responsibilities. Works for any software engineering track.
 
 ## Core Principles
 
@@ -34,7 +35,7 @@ Optimize CVs for senior tech professionals targeting remote-first, international
 ## Section-by-Section Rules
 
 ### Headline / Title
-- Use "Senior [Specific Tech] Engineer" not just "Software Engineer"
+- Use "Senior [Specific Area] Engineer" not just "Software Engineer"
 - Add "— Remote" or location context if targeting remote roles
 - Avoid stacking adjectives: "Passionate, driven, results-oriented" → cut all of it
 
@@ -45,34 +46,56 @@ Optimize CVs for senior tech professionals targeting remote-first, international
 - Banned phrases: "passionate about", "love to code", "team player", "fast learner"
 
 ### Experience Bullets
+
 Use this formula: **[Action verb] + [What you built/did] + [Result/Impact]**
 
 ```
-Good: "Reduced bundle size by 42% through code splitting and lazy loading, cutting initial load time from 4.2s to 2.4s"
-Bad:  "Responsible for performance improvements to the frontend codebase"
+Good: "Reduced API p99 latency by 60% by replacing synchronous calls with an event-driven pipeline, cutting timeout errors from 2% to 0.1%"
+Bad:  "Responsible for performance improvements to the backend services"
 
-Good: "Led migration from legacy React class components to TypeScript functional architecture, eliminating 60% of runtime type errors"
-Bad:  "Helped migrate the codebase to TypeScript"
+Good: "Led migration from a monolith to microservices, enabling 4 independent teams to deploy without coordination for the first time"
+Bad:  "Helped with the microservices migration"
 ```
 
 **High-impact action verbs for senior engineers:**
-Architected, Designed, Built, Led, Reduced, Increased, Migrated, Unified, Eliminated, Shipped, Scaled, Owned
+Architected, Designed, Built, Led, Reduced, Increased, Migrated, Unified, Eliminated, Shipped, Scaled, Owned, Automated, Established
 
 ### Skills Section
-Organize by category, not just a flat list:
-- **Frontend**: React, Next.js (App Router), TypeScript, TanStack Query, Zustand
-- **Architecture**: Component systems, design systems, Clean Architecture, BFF patterns, monorepos
-- **Performance**: SSR/SSG, caching strategies, code splitting, virtualization
-- **Testing**: Jest, React Testing Library, Cypress, Playwright
-- **Tooling**: Vite, Webpack, Turborepo, Storybook
-- **Backend/Cloud**: Node.js, Fastify, Redis, AWS (IAM, S3, Lambda), Vercel
+
+Organize by category — not a flat list. Categories vary by track; adapt to the user's actual stack.
+
+**Frontend example:**
+- Languages / Frameworks: React, Next.js (App Router), TypeScript
+- Architecture: Component systems, design systems, monorepos
+- Performance: SSR/SSG, bundle optimization, Core Web Vitals
+- Testing: Jest, Playwright, React Testing Library
+
+**Backend example:**
+- Languages / Frameworks: Go, Node.js (Fastify/Express), Python
+- Data: PostgreSQL, Redis, Kafka, Elasticsearch
+- Infrastructure: AWS (ECS, Lambda, RDS), Docker, Terraform
+- Observability: OpenTelemetry, Datadog, structured logging
+
+**DevOps / Platform example:**
+- Cloud & Infra: AWS, GCP, Kubernetes, Terraform, Helm
+- CI/CD: GitHub Actions, ArgoCD, Flux, GitOps workflows
+- Observability: Prometheus, Grafana, Datadog, PagerDuty
+- Developer Experience: Backstage, internal platforms, self-service tooling
+
+**AI/ML example:**
+- ML Frameworks: PyTorch, Scikit-learn, Hugging Face Transformers
+- LLM / AI: OpenAI API, RAG pipelines, LangChain, prompt engineering
+- MLOps: MLflow, Weights & Biases, SageMaker, feature stores
+- Data: Spark, dbt, Airflow, BigQuery
+
+Adapt categories to the user's actual work. Do not list tools they have only used once or superficially.
 
 ## Adapting for Target Roles
 
-### Senior / Staff Frontend Engineer
+### Senior / Staff Engineer (any track)
 - Lead with architecture and system design decisions
 - Show ownership: "I designed X, not just implemented it"
-- Highlight scale: user counts, team size, codebase complexity
+- Highlight scale: user counts, team size, request volume, data size
 
 ### Remote-First Companies (US/EU)
 - Add GitHub profile link if present
@@ -80,9 +103,9 @@ Organize by category, not just a flat list:
 - English fluency should be evident from CV quality itself
 
 ### AI-Product Companies (high demand in 2025–2026)
-- Emphasize real-time UI experience
-- Highlight streaming/event-driven patterns
-- Show any AI tool integration work (even if you were the frontend layer)
+- Emphasize real-time, streaming, or event-driven experience
+- Show any AI tool integration work, even as supporting infrastructure
+- Highlight reliability and observability ownership
 
 ## Common CV Problems to Fix
 
@@ -92,8 +115,10 @@ Organize by category, not just a flat list:
 | No metrics anywhere | Add at least 1 metric per role, even relative ones |
 | Missing links (GitHub, portfolio) | Flag it — senior engineers should have at least one |
 | "Seeking opportunities" in summary | Replace with what value you bring |
-| Embraer internship taking up space | Compress to 2 bullets max after 8+ years |
+| Old or irrelevant early roles taking up space | Compress to 1–2 bullets max after 8+ years |
 | Vague impact statements | Rewrite with the formula: Action + What + Result |
+| Skills listed as a flat dump | Group into categories by area |
+| Generic title ("Software Engineer") | Specialize: "Senior Backend Engineer", "Staff Platform Engineer" |
 
 ## Output Format
 
