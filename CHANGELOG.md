@@ -1,5 +1,21 @@
 # Plugin Changelog
 
+## [0.5.0] — 2026-03-31
+
+### improvement: all skills — Notion context sync on every run
+Every skill now opens with a **Step 0: Sync User Context from Notion** block that fetches the 👤 Profile page before doing any work. Skills no longer rely on the current conversation context alone — they always check what's saved first, so they stay accurate across sessions.
+
+- **get-user-context** (0.2.0 → 0.3.0): Step 0 split into 0a (MCP check) and 0b (existing context check). Now fetches the Profile page before asking any questions. If context exists, summarises it and asks "anything to update?" instead of running the full questionnaire. Full flow only runs on a fresh profile.
+- **profile-optimizer** (0.3.0 → 0.4.0): Loads Profile page + latest Profile Versions entry. Uses saved tech stack, experience, and positioning as the authoritative starting point.
+- **cv-optimizer** (0.4.0 → 0.5.0): Loads Profile page + active CV Versions entry. Uses saved CV content as the baseline if no file is uploaded. Never asks the user to re-paste experience that's already in Notion.
+- **cover-letter** (0.3.0 → 0.4.0): Loads Profile page + active CV + Cover Letters history. Flags existing letters to the same company/role type, offering to adapt rather than start from scratch.
+- **post-generator** (0.3.0 → 0.4.0): Loads Profile page for tech stack, positioning, content pillars, and target roles — the data that makes posts specific and credible.
+- **trend-analyzer** (0.2.0 → 0.3.0): Loads Profile page for track, stack, and positioning before surfacing any ideas. Every suggested topic is now grounded in this specific person's experience.
+
+Plugin bumped to 0.5.0.
+
+---
+
 ## [0.4.0] — 2026-03-31
 
 ### infrastructure: Notion databases created
