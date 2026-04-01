@@ -7,19 +7,21 @@ description: >
   "onboarding", "my background", or before running other plugin skills without prior context.
   Notion MCP is required for persistence; guide the user to configure `/mcp` in chat when needed.
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Get User Context
 
 Collect everything needed to personalize **software professionals** (any track: frontend, backend, platform/DevOps/SRE, AI/ML, full-stack, etc.). This skill runs **before** deep CV, LinkedIn, or content work when context is missing or stale.
 
-## Step 0: Verify Notion MCP Connection (mandatory gate)
+## Step 0: Verify Notion MCP + Check Existing Context (mandatory gate)
 
 **This must run before anything else in this skill.**
 
+### 0a — Verify Notion MCP connection
+
 1. Attempt a `notion-search` call with a generic query (e.g. "LinkedIn & CV Builder") to test if the connector is live.
-2. **If the call succeeds**: Notion is connected. Record this as an active connector in the session context — all subsequent saves in this session will use it. Proceed to Step 1.
+2. **If the call succeeds**: Notion is connected. Record this as an active connector in the session context — all subsequent saves in this session will use it. Proceed to Step 0b.
 3. **If the call fails or tools are unavailable**: **Stop here. Do not ask any profile questions.** Tell the user:
 
 > "Before we get started, I need Notion connected — this plugin uses it to keep your CV versions, profile drafts, and posts between sessions so nothing gets lost.
@@ -31,6 +33,19 @@ Collect everything needed to personalize **software professionals** (any track: 
 > Once you've done that, just let me know and we'll continue from here."
 
 Do not proceed until the user confirms and a `notion-search` call actually succeeds. If it still fails after their confirmation, troubleshoot — wrong account, pop-up blocked, missing workspace permission — before moving on. Never assume it worked.
+
+### 0b — Check for existing profile context in Notion
+
+Once Notion is confirmed connected, **before asking a single question**, check if a profile already exists:
+
+1. Fetch the **👤 Profile** page (`334dd4dd-5a6e-818f-b458-d15454554d89`) directly. If it returns valid content with Identity, Career Snapshot, and Tech Stack sections, context already exists.
+2. **If context exists**: Read the page and summarise what you found:
+   > "I already have your profile saved — here's a quick summary: [name, current role, years exp, track, target roles, last updated date]. Anything to update since then? Or shall I use this and move on?"
+   - If the user says nothing has changed: load the profile data into session context and skip to Step 1 (ask for CV/LinkedIn if needed for the specific downstream task).
+   - If the user wants to update specific fields: only ask about the changed parts, then patch the Notion Profile page.
+3. **If context is missing or empty**: Run the full questionnaire flow below.
+
+> This step is fast — one fetch call. Never skip it; it prevents re-asking the user for information they've already provided.
 
 ---
 

@@ -7,12 +7,26 @@ description: >
   or positioning with current market demand. Also triggers for "market trends",
   "what should I focus on", or "what's relevant right now". Works for any engineering track.
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Trend Analyzer
 
-Identify high-signal content opportunities and market positioning angles for senior software professionals across all engineering tracks. Surface what's actually moving in the market — not what was trending 18 months ago.
+## Step 0: Sync User Context from Notion
+
+**Run this before suggesting any topics or trends.**
+
+1. Fetch the **👤 Profile** page (`334dd4dd-5a6e-818f-b458-d15454554d89`) using `notion-fetch`.
+2. Load and hold in session context:
+   - **Primary track**: frontend, backend, DevOps, AI/ML, etc. — determines which trend section to prioritize
+   - **Tech Stack**: the specific tools and frameworks — determines which ideas this person can write credibly
+   - **Current Positioning**: their angle — helps avoid suggesting generic topics that don't fit their brand
+   - **Target Roles**: who they want to attract — shapes the content angle (e.g. Staff-level content vs. Senior IC vs. broad reach)
+   - **Content Pillars**: if defined, check which are underrepresented to suggest gap-filling topics
+3. Every idea suggested must be grounded in this specific person's stack and experience — not generic "senior engineer" content.
+
+If Notion is unavailable, ask the user for their track and stack before proceeding:
+> "I couldn't load your saved profile. What's your primary track and main tech stack? That way I can give you ideas you can actually write credibly." Surface what's actually moving in the market — not what was trending 18 months ago.
 
 ## Core Objective
 

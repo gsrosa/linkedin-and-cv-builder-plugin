@@ -6,7 +6,29 @@ description: >
   accompanying a job application. Also triggers for "motivation letter", "application email",
   or "why I want to work at X". Works for any engineering track and any target company type.
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
+---
+
+# Cover Letter Generator
+
+## Step 0: Sync User Context from Notion
+
+**Run this before writing a single word.**
+
+1. Fetch the **👤 Profile** page (`334dd4dd-5a6e-818f-b458-d15454554d89`) using `notion-fetch`.
+2. Load and hold in session context:
+   - **Identity**: name, email, phone, LinkedIn URL
+   - **Career Snapshot**: current role, years of experience, track
+   - **Current Positioning**: their angle and differentiated value
+   - **Key Proof Points**: the 2–3 most impressive stories from their experience
+   - **Target Roles**: level, company type, geography — critical for letter tone and angle
+3. Fetch the **active entry** from **📄 CV Versions** (`0b54fd1c27884ca5aa8c729fccf61e58`) to load the latest CV bullets and story set — use these as the source for the letter's body paragraphs.
+4. Check **✉️ Cover Letters** (`598395c2778c4b5dae18bcdd59fb7e67`) for any prior letters. If letters to the same company or same role type exist, flag them:
+   > "I found a previous cover letter for [role type] from [date]. Do you want me to use that as a base and adapt it, or start fresh?"
+
+If Notion is unavailable, proceed with conversation context only and note:
+> "I couldn't load your saved profile — I'll work with what you've shared. Run `get-user-context` to keep Notion up to date."
+
 ---
 
 # Cover Letter Generator

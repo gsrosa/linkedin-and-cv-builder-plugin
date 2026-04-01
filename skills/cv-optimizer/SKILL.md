@@ -7,12 +7,31 @@ description: >
   triggers for "ATS optimization", "resume feedback", or "CV for remote roles".
   Works for any engineering track: frontend, backend, DevOps, AI/ML, full-stack, etc.
 metadata:
-  version: "0.4.0"
+  version: "0.5.0"
 ---
 
 # CV / Resume Optimizer
 
-Optimize CVs for senior tech professionals targeting remote-first, international, or high-growth companies. Focus exclusively on impact, specificity, and positioning — not responsibilities. Works for any software engineering track.
+Optimize CVs for senior tech professionals targeting remote-first, international, or high-growth companies.
+
+## Step 0: Sync User Context from Notion
+
+**Run this before reviewing or rewriting anything.**
+
+1. Fetch the **👤 Profile** page (`334dd4dd-5a6e-818f-b458-d15454554d89`) using `notion-fetch`.
+2. Load and hold in session context:
+   - **Identity**: name, location, email, LinkedIn URL, phone
+   - **Career Snapshot**: years of experience, primary track, current company + role, job search status
+   - **Current Positioning**: self-description and angle
+   - **Tech Stack**: full stack by category
+   - **Experience**: all roles with bullets and stacks
+   - **Education, Certifications, Languages**
+   - **Target Roles**: level, company type, geography (critical for positioning the CV correctly)
+3. Fetch the **active entry** from **📄 CV Versions** (`0b54fd1c27884ca5aa8c729fccf61e58`) (Status = Active) to load the most recently confirmed CV content. Use this as the current CV baseline if the user hasn't uploaded a file.
+4. Use this data as the authoritative source. Do not ask the user to re-paste their experience if it's saved in Notion.
+
+If the Profile page or CV Versions is empty or inaccessible, proceed with the file/content the user provides and note:
+> "I couldn't load your saved context — I'll work with what you've shared here. Run `get-user-context` after this to keep Notion in sync." Focus exclusively on impact, specificity, and positioning — not responsibilities. Works for any software engineering track.
 
 ## Writing Tone
 

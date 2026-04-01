@@ -6,12 +6,26 @@ description: >
   help writing any LinkedIn content. Also triggers for "carousel structure", "post hook",
   "LinkedIn content", or "draft a post".
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
 ---
 
 # LinkedIn Post Generator
 
-Generate high-leverage, differentiated LinkedIn posts for senior tech professionals. The goal is not volume — it is sharpness, credibility, and scroll-stopping clarity.
+## Step 0: Sync User Context from Notion
+
+**Run this before generating any post or idea.**
+
+1. Fetch the **👤 Profile** page (`334dd4dd-5a6e-818f-b458-d15454554d89`) using `notion-fetch`.
+2. Load and hold in session context:
+   - **Career Snapshot**: current role, track, company, years of experience
+   - **Tech Stack**: frameworks, architecture areas, tools — the specific things this person can write about credibly
+   - **Current Positioning**: the angle and differentiated value they want to project
+   - **Content Pillars**: if defined, use them to guide topic selection
+   - **Target Roles**: who they're trying to attract — informs tone and technical depth
+3. This context is what makes posts credible and specific. Without it, posts will sound generic.
+
+If Notion is unavailable, proceed with conversation context and note:
+> "I couldn't load your saved profile — posts may be less tailored. Run `get-user-context` to keep Notion in sync." The goal is not volume — it is sharpness, credibility, and scroll-stopping clarity.
 
 **References:** `references/post-index.md` — creation engine, hooks, insight extraction, opinions, critic, and annotated examples.
 

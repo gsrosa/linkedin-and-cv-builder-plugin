@@ -7,12 +7,30 @@ description: >
   fields (not posts). Also triggers for "LinkedIn SEO", "profile visibility", or
   "make my profile stand out". Works for any engineering track.
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
 ---
 
 # LinkedIn Profile Optimizer
 
-Optimize every section of a LinkedIn profile for senior tech professionals across all engineering tracks. The goal is discoverability by recruiters + credibility when someone lands on the profile. These two objectives sometimes conflict — resolve in favor of credibility.
+Optimize every section of a LinkedIn profile for senior tech professionals across all engineering tracks.
+
+## Step 0: Sync User Context from Notion
+
+**Run this before generating any headline or About section.**
+
+1. Fetch the **👤 Profile** page (`334dd4dd-5a6e-818f-b458-d15454554d89`) using `notion-fetch`.
+2. Load and hold in session context:
+   - **Identity**: name, current title, location, email, LinkedIn URL
+   - **Career Snapshot**: years of experience, primary track, current company + role, job search status, career goal
+   - **Current Positioning**: how they describe themselves today
+   - **Tech Stack**: full stack — frameworks, architecture, testing, tooling, cloud
+   - **Experience**: recent roles (at least the last 2) with bullets and stack
+   - **Target Roles**: what they're aiming for (level, company type, geography)
+3. Also fetch the latest entry from **🏆 Profile Versions** (`96098fa1ce2f4b1797770a192575ac97`) to understand what the most recent optimized version looked like, and avoid repeating it.
+4. Use this data as the authoritative starting point — do not ask the user to re-explain their experience if it's already in Notion.
+
+If the Profile page is empty or inaccessible, proceed with conversation context only and note:
+> "I couldn't load your saved profile — I'll work with what you've shared here. Run `get-user-context` after this to keep Notion up to date." The goal is discoverability by recruiters + credibility when someone lands on the profile. These two objectives sometimes conflict — resolve in favor of credibility.
 
 ## Writing Tone
 
