@@ -1,5 +1,24 @@
 # Plugin Changelog
 
+## [0.4.0] — 2026-03-31
+
+### infrastructure: Notion databases created
+Three structured databases are now live in the "Guilherme - LinkedIn & CV Builder" Notion workspace:
+- **🏆 Profile Versions** (`96098fa1ce2f4b1797770a192575ac97`) — tracks every profile optimizer run with Positioning tags (Senior, Staff, Principal, IC Lead) and Focus Keywords (AI products, Frontend Architecture, Performance, Design Systems, etc.)
+- **📄 CV Versions** (`0b54fd1c27884ca5aa8c729fccf61e58`) — tracks every CV version with Status (Active/Draft/Archived), Level tags, Tech Focus tags (React, Vue, Angular, etc.), and Market tags (Remote, US, EU, LATAM, Canada)
+- **✉️ Cover Letters** (`598395c2778c4b5dae18bcdd59fb7e67`) — tracks every cover letter with Company, Role, Status (Draft/Sent/In Review/Archived), Company Type tags, and Level tags
+
+### improvement: profile-optimizer (0.2.0 → 0.3.0)
+Updated Notion save instructions to point directly to the 🏆 Profile Versions database with exact property names and tag options. Skills now know the database ID — no searching required. Positioning and Focus Keywords multi-selects documented inline.
+
+### improvement: cv-optimizer (0.3.0 → 0.4.0)
+Updated Notion save instructions to point directly to the 📄 CV Versions database. Status lifecycle documented (Draft → Active; previous Active becomes Archived). Level, Tech Focus, and Market multi-selects documented inline with all options.
+
+### improvement: cover-letter (0.2.0 → 0.3.0)
+Updated Notion save instructions to point directly to the ✉️ Cover Letters database. Company Type and Level multi-selects documented inline. Notes field now explicitly records what was left as a placeholder.
+
+---
+
 ## [0.3.0] — 2026-03-31
 
 ### feature: post-generator (0.2.0 → 0.3.0)

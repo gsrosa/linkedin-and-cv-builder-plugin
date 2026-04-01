@@ -7,7 +7,7 @@ description: >
   fields (not posts). Also triggers for "LinkedIn SEO", "profile visibility", or
   "make my profile stand out". Works for any engineering track.
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # LinkedIn Profile Optimizer
@@ -135,20 +135,26 @@ After generating a new headline or About section, offer to save it:
 > "Want me to save this to your Notion profile version history?"
 
 If yes:
-1. Search for "[FirstName] - LinkedIn & CV Builder" using `notion-search`
-2. Navigate to the **Profile Versions** database under the LinkedIn section
-3. Create a new entry:
-   - **Title**: "v[N] — [angle, e.g. 'AI focus', 'Performance specialist']"
-   - **Headline**: The new headline
-   - **Summary Snippet**: First 2 lines of the new About section
-   - **Target Role**: from conversation context
-   - **Notes**: What changed and why
-   - **Date**: Today
-4. Confirm: "Saved to Notion → LinkedIn / Profile Versions."
 
-Also save a local `.md` backup to the workspace folder:
+**Notion — 🏆 Profile Versions database** (`96098fa1ce2f4b1797770a192575ac97`)
+
+Create a new page in this database with the following properties:
+- **Version** *(title)*: `v[N] — [angle]` e.g. `v2 — AI products focus` or `v3 — Staff positioning`
+- **Date**: Today's date
+- **Positioning** *(multi-select)*: Pick all that apply → `Senior`, `Staff`, `Principal`, `IC Lead`
+- **Focus Keywords** *(multi-select)*: Pick all that apply → `AI products`, `Frontend Architecture`, `Performance`, `Design Systems`, `Remote-first`, `Real-time UIs`, `Creator Tools`, `Developer Tools`
+- **Headline**: The exact new headline text
+- **Summary Snippet**: First 2 sentences of the new About section
+- **Notes**: What changed and why (e.g. "Shifted angle toward Staff IC positioning; added AI streaming work as lead proof point")
+- **Local File**: path to the `.md` backup (see below)
+
+Add the full headline + About section as the page body (child content of the entry).
+
+Confirm: `"Saved to Notion → 🏆 Profile Versions."`
+
+**Local `.md` backup:**
 - File path: `linkedin/profile-v[N]-[slug].md` (e.g. `linkedin/profile-v2-ai-focus.md`)
-- Content: headline, full About section, and notes on what changed
+- Content: version heading, headline, full About section, positioning tags, and change notes
 - Use the Write tool to create this file immediately after the Notion save
 
 If Notion MCP is not connected, prompt the user to configure it via `/mcp` (see `notion-setup`). If no workspace exists yet, run the Notion setup skill first.

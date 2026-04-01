@@ -7,7 +7,7 @@ description: >
   triggers for "ATS optimization", "resume feedback", or "CV for remote roles".
   Works for any engineering track: frontend, backend, DevOps, AI/ML, full-stack, etc.
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
 ---
 
 # CV / Resume Optimizer
@@ -203,21 +203,25 @@ After generating, show the user a preview of the formatting and ask:
 
 After the `.docx` is confirmed:
 
-1. Search for "[FirstName] - LinkedIn & CV Builder" using `notion-search`
-2. Navigate to the **CV Versions** database under the CV section
-3. Create a new entry:
-   - **Title**: "v[N] — [target role or context, e.g. 'Senior remote, US-focused']"
-   - **Target Role**: from conversation context
-   - **Key Changes**: bullet summary of what was rewritten
-   - **Date**: Today
-   - **Format**: DOCX + MD
-4. If this was a full CV rewrite, also update the **📌 Current CV** page with the new content
-5. Add the full CV content as a child page of the version entry
-6. Confirm: "Saved to Notion → CV / CV Versions."
+**Notion — 📄 CV Versions database** (`0b54fd1c27884ca5aa8c729fccf61e58`)
 
-Save locally — both formats:
+Create a new page in this database with the following properties:
+- **Version** *(title)*: `v[N] — [descriptor]` e.g. `v2 — Senior Frontend Remote` or `v3 — Vue focus, EU market`
+- **Date**: Today's date
+- **Status** *(select)*: `Active` for the current working version; `Archived` for previous versions — mark the previous active entry as Archived after saving
+- **Level** *(multi-select)*: Pick all that apply → `Senior`, `Staff`, `Principal`, `IC Lead`
+- **Tech Focus** *(multi-select)*: Pick all that apply based on what was emphasized → `React`, `Vue`, `Angular`, `Next.js`, `TypeScript`, `Node.js`, `Full-stack`, `Frontend Arch`
+- **Market** *(multi-select)*: Pick all that apply based on target → `Remote`, `US`, `EU`, `LATAM`, `Canada`
+- **Key Changes**: brief bullet summary of what was rewritten or re-angled (e.g. "Rewrote RHEI bullets to lead with AI streaming work; compressed Pollen/Embraer to 1 bullet each; shifted title to Staff")
+- **Local File**: path to the `.docx` file
+
+Add the full CV content in plain text as the page body (child content of the entry).
+
+Confirm: `"Saved to Notion → 📄 CV Versions."`
+
+**Local files — both formats:**
 - Markdown: `cv/cv-v[N]-[slug].md` — full CV content in plain markdown
-- Word doc: `cv/cv-v[N]-[slug].docx` — the formatted file from the docx skill
+- Word doc: `cv/cv-v[N]-[slug].docx` — the formatted file
 
 Confirm:
 > "Saved: `cv/cv-v[N]-[slug].docx` (formatted, 2-page) + `cv/cv-v[N]-[slug].md` (plain text backup)."

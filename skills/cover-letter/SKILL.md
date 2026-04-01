@@ -6,7 +6,7 @@ description: >
   accompanying a job application. Also triggers for "motivation letter", "application email",
   or "why I want to work at X". Works for any engineering track and any target company type.
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # Cover Letter Generator
@@ -127,22 +127,30 @@ After generating, show the user:
 
 After the `.docx` is confirmed:
 
-1. Search for "[FirstName] - LinkedIn & CV Builder" using `notion-search`
-2. Navigate to the **CV** section
-3. Create or locate a **Cover Letters** database (create it if it doesn't exist with properties: Title, Company, Role, Status, Date, Notes)
-4. Create a new entry:
-   - **Title**: "[Company] — [Role]"
-   - **Status**: Draft
-   - **Date**: Today
-   - **Format**: DOCX + MD
-5. Add the full letter text as a child page of the entry
-6. Confirm: "Saved to Notion → CV / Cover Letters."
+Use the **✉️ Cover Letters database** (`598395c2778c4b5dae18bcdd59fb7e67`) — see full schema below.
 
 Save locally — both formats:
-- Markdown: `cv/cover-letters/[YYYY-MM-DD]-[company]-[role-slug].md` — plain text version
-- Word doc: `cv/cover-letters/[YYYY-MM-DD]-[company]-[role-slug].docx` — formatted file
+- Markdown: `cv/cover-letters/[YYYY-MM-DD]-[company-slug]-[role-slug].md` — plain text version
+- Word doc: `cv/cover-letters/[YYYY-MM-DD]-[company-slug]-[role-slug].docx` — formatted file
 
 Confirm:
 > "Saved: `cv/cover-letters/[date]-[company]-[role].docx` (formatted) + `.md` (plain text backup)."
 
-If Notion MCP is not connected, prompt the user to configure it via `/mcp` (see `notion-setup`).
+---
+
+**Notion — ✉️ Cover Letters database** (`598395c2778c4b5dae18bcdd59fb7e67`)
+
+Create a new page in this database with the following properties:
+- **Title** *(title)*: `[Company] — [Role]` e.g. `Stripe — Senior Backend Engineer` or `Generic — Senior Frontend (no JD)`
+- **Company**: Company name (or "Generic" if no specific company)
+- **Role**: Role title from the JD (or target role if generic)
+- **Date**: Today's date
+- **Status** *(select)*: `Draft` on creation; user can update to `Sent`, `In Review`, or `Archived` later
+- **Company Type** *(multi-select)*: Pick all that apply → `Startup`, `Scale-up`, `Enterprise`, `Remote-first`, `FAANG`, `AI product`, `Developer Tools`, `Creator Tools`, `SaaS`
+- **Level** *(multi-select)*: Pick all that apply → `Senior`, `Staff`, `Principal`
+- **Notes**: What angle was used, what was left as a placeholder (e.g. "Para 1 is a placeholder — user needs to add company-specific hook before sending")
+- **Local File**: path to the `.docx` file
+
+Add the full cover letter text as the page body (child content of the entry).
+
+Confirm: `"Saved to Notion → ✉️ Cover Letters."`
